@@ -1,38 +1,226 @@
-.App {
-  text-align: center;
+
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root
+{
+  --color-secondary:#25AE60;
+  --color-white:#FFFFFF;
+  --color-black:#000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.light-mode{
+  --color-black:#FFFFFF;
+  --color-white:#000;
+  --color-secondary:#ff6699;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
+  background-color: var(--color-black);
+}
+
+.container
+{
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 7rem;
+  font-size: 1.1rem;
+  border: 1px solid var(--color-white);
+  padding: 4rem;
+  margin: 7rem 3rem;
+  border-radius: 10px;
+  color: var(--color-white);
+}
+
+.task_input{
+  margin-bottom: .75rem;
+  font-size: large;
+  border: .15rem solid var(--color-white);
+  border-radius: 8px;
+  padding: .1rem;
+  text-align: center;
+}
+
+.task_input:focus{
+  outline: none;
+  border-color: var(--color-secondary);
+}
+
+button{
+  font-size: 1.1rem;
+  padding: .13rem;
+  margin:.4rem;
+  border: 1px solid var(--color-white);
+  border-radius: 6px;
+}
+
+button:hover{
+  transform:translateY(-2px);
+  transition: all .2s ease-in-out;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.task_number{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: .5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.input_task{
+  padding: 0 .25rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.input_box{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input_task{
+  flex: 1;
+  margin-left: .1rem;
+  margin-right: .1rem;
+}
+
+.display_todos{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.check_box{
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+input[type="checkbox"]
+{
+  -webkit-appearance: none;
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50%;
+  border: 1px solid var(--color-white);
+  outline: none;
+  margin-right: .1rem;
+}
+
+input[type="checkbox"]:checked{
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+ .Change_btn{
+  top:14%;
+  right:8%;
+  width: 2.5rem;
+  float: right;
+  height: 2.5rem;
+  border: 1px solid var(--color-white);
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  transition: all .1s ease-in-out;
+}
+
+.delete_btn{
+  font-size: medium;
+}
+
+.all_btn{
+  width: 3rem;
+}
+
+@media screen and (max-width:660px) {
+
+  .foot_btns{
+    display: flex;
+    flex-direction: column;
+    width: 9rem;
+    font-size: small;
   }
-  to {
-    transform: rotate(360deg);
+  .container{
+    padding: 2.5rem 2rem;
+  }
+  
+  .Change_btn{
+    right:9%;
+    top: 13%;
+  }
+
+  .all_btn{
+    width: 8.3rem;
+  }
+
+  .clearC_btn{
+    font-size: 1rem;
+  }
+  
+  .task_number{
+    font-size:large;
+    width:10.12rem;
+  }
+
+}
+
+@media screen and (max-width:450px){
+  .container{
+    font-size: small;
+  }
+  .task_input{
+    /* margin-left: 3rem; */
+    width: 12rem;
+  }
+  .Change_btn{
+  top:17.5%;
+    right: 12.5%;
+    height:2rem;
+    width: 2rem;
+    margin-bottom: .5rem;
+  }
+  .add_btn{
+    margin-left: 1.5rem;
+  }
+  .input_area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+ .container{
+  font-size: larger;
+ }
+  .task_number{
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width:1400px)
+{
+  .container{
+    margin: 7rem 20rem;
+    font-size: large;
+  }
+  .Change_btn{
+    right: 20%;
+  }
+}
+
+@media screen and (max-width:320px){
+  .Change_btn{
+    right:14.5%;
+  }
+  .task_input{
+    width: 10rem;
   }
 }
